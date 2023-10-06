@@ -1,0 +1,164 @@
+.container{
+    text-align: center;
+    justify-content: center;
+}
+.title{
+    margin-top: 5px;
+    color: rgb(225, 206, 28);
+    font-size: 60px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 0 2px 1px #9ce157, 
+      -1px 3px 1px #60335b, 
+      -2px 5px 1px #50527f;
+}
+.t1{
+    color: #26ffcb;
+    padding-left: 15px;
+}
+.w1{
+    color:red;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: larger;
+}
+  
+.reset {
+    position: relative;
+    width: 120px;
+    height: 40px;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    color: white;
+    flex-direction: column;
+    justify-content: center;
+    border: none;
+    padding: 12px;
+    gap: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 0 auto;
+    margin-top: 25px;
+    margin-bottom: 50px;
+  }
+  
+  .reset::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    left: -4px;
+    top: -1px;
+    margin: auto;
+    width: 128px;
+    height: 48px;
+    border-radius: 10px;
+    background: linear-gradient(-45deg, #e81cff 0%, #40c9ff 100% );
+    z-index: -10;
+    pointer-events: none;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .reset::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100% );
+    transform: translate3d(0, 0, 0) scale(0.95);
+    filter: blur(20px);
+  }
+  
+  .reset:hover::after {
+    filter: blur(30px);
+  }
+  
+  .reset:hover::before {
+    transform: rotate(-180deg);
+  }
+  
+  .reset:active::before {
+    scale: 0.7;
+  }
+  
+  .box{
+    display: flex;
+    height: 180px;
+    width: 180px;
+    background: #1f3540;
+    border: 4px solid #0f1b21;
+    border-radius: 12px;
+    cursor: pointer;
+  }
+  .board{
+    height:600px;
+    width:564px;
+    display:flex;
+    margin:auto;
+  }
+  .box img{
+    margin: 50px 50px;
+  }
+  .title img{
+    padding:20px 20px;
+    height:50px;
+
+  }
+  /* Add this CSS to your Tictacetoe.css file */
+
+/* Define the animation for the balloons */
+@keyframes balloonAnimation {
+    0% {
+      transform: translateY(0) rotate(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-1000px) rotate(360deg);
+      opacity: 0;
+    }
+  }
+  
+  /* Style for the balloon element */
+  .balloon {
+    position: absolute;
+    width: 50px; /* Adjust the size as needed */
+    height: 70px; /* Adjust the size as needed */
+    background-image: url('https://cdn.pixabay.com/photo/2012/04/05/01/38/ballon-25724_960_720.png'); /* Use your balloon image */
+    background-size: cover;
+    animation: balloonAnimation 10s ease-in-out infinite; /* Adjust the duration as needed */
+  }
+  .balloon:nth-child(1) {
+    left: 10%; /* Adjust the position as needed */
+    animation: balloonAnimation 10s ease-in-out infinite; /* Adjust the duration as needed */
+  }
+  
+  .balloon:nth-child(2) {
+    left: 40%; /* Adjust the position as needed */
+    animation: balloonAnimation 12s ease-in-out infinite; /* Adjust the duration as needed */
+  }
+  
+  .balloon:nth-child(3) {
+    left: 70%; /* Adjust the position as needed */
+    animation: balloonAnimation 8s ease-in-out infinite; /* Adjust the duration as needed */
+  }
+  /* Add this class to the elements you want to display as balloons (e.g., winning message) */
+  .win-message {
+    display: none;
+    text-align: center;
+    font-size: 24px;
+    color: #ffffff;
+    position: relative;
+  }
+  
+  /* Adjust the z-index so balloons appear above other elements */
+  .win-message .balloon {
+    z-index: 1;
+  }
+  
+  /* Add this class when you want to show the balloons */
+  .win-animation {
+    display: block;
+    animation: balloonAnimation 10s ease-in-out infinite; /* Adjust the duration as needed */
+  }
+  
